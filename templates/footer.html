@@ -1,0 +1,43 @@
+{% load i18n %}
+{% get_current_language as til %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/foter.css' %}">
+</head>
+<body>
+    <footer class="footer">
+        <div class="columns">
+            <div class="column">
+                <a href="/{{til}}" class="itemme">{% trans 'Asosiy Sahifa' %}</a>
+                <a href="/{{til}}/register" class="itemme">{% trans "Ro'yxatdan o'tish" %}</a>
+                <a href="/{{til}}/login" class="itemme">{% trans 'Kirish' %}</a>
+              
+
+
+            </div>
+            <div class="column">
+                <a href="https://t.me/coder_200" class="itemme"><i style='color:rgb(81, 218, 236)' class="fa-brands fa-telegram"></i> &nbsp Telegram</a>
+                <a href="https://www.instagram.com/muxiddin_malikov/" class="itemme"><i  style='color:rgb(236, 81, 81)'class="fa-brands fa-instagram"></i> &nbsp Instagram</a>
+                <a href="" class="itemme"><i style='color:rgb(37, 157, 187, 0.993)' class="fa-brands fa-facebook"></i> &nbsp Facebook</a>
+            </div>
+            <div class="column">
+                <a href="" class="itemme">Tel : +998906668701</a>
+                <a href="" class="itemme">Manzil : Toshkent Amir Temur 108-uy</a>
+                <a href="" class="itemme">Mo'ljal : Milliy Bank oldida</a>
+            </div>
+           
+        </div>
+        <div class="has-text-centered">
+            Barcha huquqlar himoyalangan <span id="demo"></span>	&copy; Muhiddin Group
+        </div>
+    </footer>
+    {% load static %}
+    <script src="{% static 'js/footer.js' %}"></script>
+</body>
+</html>

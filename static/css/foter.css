@@ -1,0 +1,21 @@
+body{
+    position: relative;
+}
+.footer{
+    position: relative;
+    bottom: 0;
+    height: 200px;
+    width: calc(100% - 30px);
+    margin: 50px auto 10px;
+    border-radius: 15px;
+    padding: 10px 55px;
+    background-color:hsl(139, 39%, 58%);
+    color: #fff;
+    box-sizing: border-box;
+}
+.footer .column a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    
+}

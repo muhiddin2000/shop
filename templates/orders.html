@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% load i18n %} {% block title %} Order {% endblock
+title %} {% block content %}
+
+<center>
+  <div class="container mt-5">
+    <div class="umumiy">
+      <h1 class="">Umumiy xarajat: {{all_summa}} $</h1>
+      <h1>Umumiy mahsulotlar soni : {{item_count}}</h1>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>№</th>
+          <th>{% trans 'Mahsulot rasmi' %}</th>
+          <th>{% trans 'Mahsulot nomi' %}</th>
+          <th>{% trans 'Mahsulot narxi' %}</th>
+          <th>{% trans 'Mahsulot soni' %}</th>
+          <th>{% trans 'Umumiy summa' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in items %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{item.product.image_show}}</td>
+          <td>{{item.product.name}}</td>
+          <td>{{item.product.cost}}</td>
+          <td>
+            <a
+              class="update-cart"
+              data-product="{{item.product.id}}"
+              data-action="remove"
+            >
+              <i class="fa-solid fa-chevron-left"></i>
+            </a>
+            {{item.quantity}}
+            <a
+              class="update-cart"
+              data-product="{{item.product.id}}"
+              data-action="add"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </td>
+          <td>{{item.summa}} $</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <button class="mt-5 button is-success">Tasdiqlash</button>
+</center>
+
+{% endblock content %}

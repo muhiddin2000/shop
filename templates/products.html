@@ -1,0 +1,129 @@
+
+{% load i18n %}
+{% get_current_language as til %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/product.css' %}">
+</head>
+
+<body>
+  {% load static %}
+  <div class="columns">
+    {% if mahsulotlar %}
+{% for mahsulot in mahsulotlar.object_list %}
+    <div class="column is-3">
+      <div class="card">
+        <div class="card-image">
+          <figure class="">
+            <img src="{{mahsulot.image.url}}" class="images" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="{{mahsulot.image.url}}">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4"><i style="color:chocolate" class="fa-solid fa-file-signature"></i>
+                &nbsp;{{mahsulot.name}}</p>
+              <p class="subtitle is-6"><i style="color:rgb(224, 21, 55)" class="fa-solid fa-bars"></i>
+                &nbsp;{{mahsulot.category}}</p>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="has-text-centered mb-2">
+              {{mahsulot.description | truncatewords:1}}
+            </div>
+            <p><i class="fa-solid fa-money-check-dollar"></i>&nbsp; {% trans 'Mahsulot narxi: ' %}{{mahsulot.cost}} $</p>
+
+            <p><i class="fa-solid fa-money-check-dollar"></i>&nbsp; {% trans 'Chegirma: ' %}{{mahsulot.discount}}$</p>
+            <p><i class="fa-solid fa-calendar-days"></i>&nbsp; {{mahsulot.added}}</p>
+
+          </div>
+          <div class="card">
+            <footer class="card-footer">
+              <a href="#" class="card-footer-item"><i class="fa-solid fa-eye"></i> &nbsp; {% trans "Ko'rish" %}</a>
+
+              <a class="update-cart card-footer-item" data-product="{{mahsulot.id}}" data-action="add"><i
+                  class="fa-solid fa-basket-shopping"></i> &nbsp; {% trans 'Xarid qilish' %}</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endfor %}
+{% else %}
+    <img src="{% static 'images/not.png' %}" alt="" class="notimage">
+{% endif %}
+
+
+
+  </div>
+  <center>{% include 'pagination.html' %}</center>
+  <script>
+    function getToken(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+    var csrftoken = getToken('csrftoken')
+    var updateBtns = document.getElementsByClassName('update-cart')
+
+    for (i = 0; i < updateBtns.length; i++) {
+      updateBtns[i].addEventListener('click', function () {
+        var productId = this.dataset.product
+        var action = this.dataset.action
+
+        if (user == 'AnonymousUser') {
+          alert("Iltimos ro'yxatdan o'ting!")
+        }
+        else {
+          updateUserOrder(productId, action)
+        }
+      })
+    }
+
+    function updateUserOrder(productId, action) {
+      console.log('User is authenticated, sending data...')
+      let til="{{til}}"
+      var url = `/${til}/update_item/`
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': csrftoken,
+        },
+        body: JSON.stringify({ 'productId': productId, 'action': action })
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          location.reload()
+        });
+    }
+
+  </script>
+</body>
+
+</html>

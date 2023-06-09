@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<center>
+   
+   {% for message in messages  %}
+   {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+   <div class="notification is-danger">
+       
+       {{message}}
+</div>
+ {% endif %}
+ {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+ <div class="notification is-success">
+     
+     {{message}}
+</div>
+{% endif %}
+   {% endfor %}
+    
+</center>
+    <center>
+
+        <form method="POST" >
+            {% csrf_token %}
+        <input class="input forma" type="text" placeholder="Username" name="username" required>
+        <input class="input" type="password" placeholder="*******" name="pas1" required>
+        <input type="submit" class="button is-success" value="{% trans "Kirish" %}">
+
+
+    </form>
+    </center>
+    <style>
+    
+    </style>
+{% endblock content %}
+    
+    

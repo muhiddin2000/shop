@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;1,400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+    font-size: 18px;
+}
+.navbar{
+    margin: 0 0px;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 12px 10px;
+    background-color: hsl(141, 53%, 53%);
+}
+.logo{
+    font-size: 25px;
+}
+.navbar-item:hover,navbar-link:hover{
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.navbar-item.has-dropdown .navbar-dropdown {
+    display: none;
+}
+.navbar-item.has-dropdown.is-active .navbar-dropdown {
+    display: block;
+}
+.userwidth{
+    min-height: 60vh;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    
+    {% if mahsulotlar %}
+    <div class="pagination">
+      {% if mahsulotlar.has_previous %}
+      <a href="?page={{ mahsulotlar.previous_page_number }}">&laquo;</a>
+      {% else %}
+      <a href="#" class="disabled">&laquo;</a>
+      {% endif %}
+      
+      <a href="#" class="active">{{mahsulotlar.number}}</a>
+      {% if mahsulotlar.has_next %}
+      <a href="?page={{ mahsulotlar.next_page_number }}">&raquo;</a>
+      {% else %}
+      <a class="disabled">&raquo;</a>
+      {% endif %}
+          
+    </div>
+      
+    {% endif %}
+      
+      <style>
+        .disabled{
+            pointer-events:none;
+            color: aliceblue;
+        }
+      </style>
+</body>
+</html>

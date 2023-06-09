@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-01 13:25-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\category\models.py:13
+#, fuzzy
+#| msgid "Kategoriya"
+msgid "Kategoriya "
+msgstr "Category"
+
+#: .\category\models.py:14
+#, fuzzy
+#| msgid "Kategoriya"
+msgid "Kategoriyalar "
+msgstr "Category"
+
+#: .\eshop\settings.py:124
+msgid "O'zbek"
+msgstr "Uzbek"
+
+#: .\eshop\settings.py:125
+msgid "English"
+msgstr "English"
+
+#: .\eshop\settings.py:168
+msgid "Admin panelga xush kelibsiz!"
+msgstr ""
+
+#: .\eshop\settings.py:187
+#, fuzzy
+#| msgid "Asosiy Sahifa"
+msgid "Asosiy sahifa"
+msgstr "Home"
+
+#: .\eshop\settings.py:190 .\eshop\settings.py:206
+msgid "Yordam"
+msgstr "Help"
+
+#: .\products\models.py:12
+msgid "Mahsulot nomini kiriting"
+msgstr "Enter the product name"
+
+#: .\products\models.py:12
+msgid "Mahsulot nomi"
+msgstr "Product name"
+
+#: .\products\models.py:13
+msgid "Mahsulot kategoriyasini tanlang"
+msgstr "Select a product category"
+
+#: .\products\models.py:13
+msgid "Mahsulot kategoriyasi"
+msgstr "Product category"
+
+#: .\products\models.py:14
+msgid "Mahsulot rasmini yuklang"
+msgstr "Upload a product image"
+
+#: .\products\models.py:14
+msgid "Mahsulot rasmi"
+msgstr "Product picture"
+
+#: .\products\models.py:15
+msgid "Mahsulot haqida kiriting"
+msgstr "Enter about the product"
+
+#: .\products\models.py:15
+msgid "Mahsulot haqida qisqacha"
+msgstr "Briefly about the product"
+
+#: .\products\models.py:16
+msgid "Mahsulot narxini kiriting"
+msgstr "Enter the price of the product"
+
+#: .\products\models.py:16
+msgid "Mahsulot narxi"
+msgstr "Product price"
+
+#: .\products\models.py:17
+msgid "Mahsulot chegirma narxini kiriting"
+msgstr "Enter the product discount price"
+
+#: .\products\models.py:17
+msgid "Chegirma narxi"
+msgstr "Discount price"
+
+#: .\products\models.py:18
+msgid "Ko'rilganlari soni"
+msgstr "Number of views"
+
+#: .\products\models.py:26
+msgid "Mahsulot "
+msgstr "Product"
+
+#: .\products\models.py:27
+msgid "Mahsulotlar "
+msgstr "Products"
+
+#: .\templates\footer.html:17 .\templates\navbar.html:32
+msgid "Asosiy Sahifa"
+msgstr "Home"
+
+#: .\templates\footer.html:18 .\templates\register.html:36
+msgid "Ro'yxatdan o'tish"
+msgstr "Sign up"
+
+#: .\templates\footer.html:19 .\templates\login.html:35
+msgid "Kirish"
+msgstr "Log in"
+
+#: .\templates\navbar.html:36
+msgid "Hujjatlar"
+msgstr "Documents"
+
+#: .\templates\navbar.html:41
+msgid "Kategoriya"
+msgstr "Category"
+
+#: .\templates\navbar.html:58
+msgid "Til"
+msgstr "Language"
+
+#: .\templates\navbar.html:66
+#, fuzzy
+#| msgid "O'zbek"
+msgid "O'z"
+msgstr "Uzbek"
+
+#: .\templates\navbar.html:69
+#, fuzzy
+#| msgid "English"
+msgid "Eng"
+msgstr "English"
+
+#: .\templates\navbar.html:85
+msgid "Prof tahrirlash"
+msgstr "Editing by Prof"
+
+#: .\templates\navbar.html:88
+msgid "Chiqish"
+msgstr "Logaut"
+
+#: .\templates\products.html:40
+msgid "Mahsulot narxi: "
+msgstr "Product price:"
+
+#: .\templates\products.html:42
+msgid "Chegirma: "
+msgstr "Discount:"
+
+#: .\templates\products.html:48
+#, fuzzy
+#| msgid "Kirish"
+msgstr "Log in"
+
+#: .\templates\products.html:50
+msgid "Ko'rish"
+msgstr "View"
+
+msgid "Xarid qilish"
+msgstr "Shopping"
+
+#~ msgid "Til tanlash"
+#~ msgstr "Choose Language "
+
+#~ msgid "Uz 🇺🇿"
+#~ msgstr "Uz 🇺🇿 "
+
+#~ msgid "en 🇺🇸"
+#~ msgstr "en 🇺🇸"
+
+#, fuzzy
+#~| msgid "O'zbek"
+#~ msgid "O'zbekcha"
+#~ msgstr "Uzbek"
+
+#, fuzzy
+#~| msgid "English"
+#~ msgid "Inglizcha"
+#~ msgstr "English"

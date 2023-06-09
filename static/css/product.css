@@ -1,0 +1,18 @@
+.card{
+    margin: 15px 0px;
+    border-radius: 15px;
+    
+}
+.card .images{
+    width: 150px;
+    display: block;
+    height: 150px;
+    margin: 0 auto;
+}
+.column{
+    margin: 30px;
+}
+.notimage{
+    margin: 25px auto;
+    width: 40%;
+}
